@@ -1,0 +1,30 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Coliving{% endblock %}
+
+{% block body %}
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row w-100">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Trouvez Votre Co-Living Idéal</h2>
+                    {{ form_start(form, {'action': path('recherche_resultats'), 'method': 'GET'}) }}
+                    <div class="input-group input-group-lg mb-3">
+                        {{ form_widget(form.localisation, {'attr': {'class': 'form-control', 'placeholder': 'Où allez-vous ?'}}) }}
+                        <div class="input-group-append">
+                            {{ form_widget(form.rechercher, {'attr': {'class': 'btn btn-primary', 'value': 'Rechercher'}}) }}
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
